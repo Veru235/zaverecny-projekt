@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="author" content="Veronika Tomášová + Chatgpt">
+    <meta charset="UTF-8">
+    <title>Svět psů</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: rgb(192, 190, 190);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #8d8d8d;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        /* Galerie */
+        .gallery {
+            text-align: center;
+        }
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .gallery button {
+            margin: 10px;
+            padding: 10px 15px;
+            border: none;
+            background-color:#8d8d8d;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .gallery button:hover {
+            background-color: #8d8d8d;
+        }
+
+        footer {
+            background-color: #5f5d5d;
+            color: rgb(145, 119, 65);
+            text-align: center;
+            padding: 10px;
+        }
+
+        body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 15px;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Svět psů 🐶</h1>
+    <p>Vše o nejlepším příteli člověka</p>
+</header>
+
+<nav>
+    <a href="#o-psich">O psech</a>
+    <a href="#plemena">Plemena</a>
+    <a href="#pece">Péče</a>
+    <a href="#galerie">Galerie</a>
+</nav>
+
+<section id="o-psich">
+    <div class="card">
+        <h2>O psech</h2>
+        <p>Pes domácí je největší domestikovaná šelma a jedno z nejstarších domestikovaných zvířat vůbec. Provází člověka minimálně 14 tisíc let. Obecně se předpokládá, že se jedná o zdomácnělého a umělým výběrem změněného vlka obecného.Úloha psa v lidské společnosti byla vždy rozmanitá, člověku je pomocníkem při lovu nebo při přehánění stád, zaujímá funkci strážce majetku, svého majitele a dalších domácích zvířat, používá se k přepravě nákladů, jako tažný nebo saňový pes, může být cvičen pro použití v ozbrojených složkách či k asistenci hendikepovaným osobám.</p>
+    </div>
+</section>
+
+<section id="plemena">
+    <div class="card">
+        <h2>Oblíbená plemena</h2>
+        <ul>
+            <li>Labradorský retrívr</li>
+            <li>Německý ovčák</li>
+            <li>Francouzský buldoček</li>
+            <li>Zlatý retrívr</li>
+            <li>Jezevčík</li>
+            <li>Čivava</li>
+            <li>Border kolie</li>
+        </ul>
+    </div>
+</section>
+
+<section id="pece">
+    <div class="card">
+        <h2>Péče o psa</h2>
+        <p>Péče o psa zahrnuje kvalitní stravu, pravidelný pohyb, zdravotní prevenci (očkování, odčervení) a láskyplný přístup. Základem je rutina: pravidelné venčení, krmení a dostatek odpočinku (12 - 14 hodin denně). Důležitá je socializace, péče o srst, zuby a drápy a zajištění stálého přístupu k čisté vodě. </p>
+    </div>
+</section>
+
+<section id="galerie">
+    <div class="card gallery">
+        <h2>Galerie psů</h2>
+        <img id="dogImage" src="https://placedog.net/500/300?id=1" alt="Pes">
+
+        <div>
+            <button onclick="prevImage()">⬅ Předchozí</button>
+            <button onclick="nextImage()">Další ➡</button>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+    const images = [
+        "https://placedog.net/500/300?id=1",
+        "https://placedog.net/500/300?id=2",
+        "https://placedog.net/500/300?id=3",
+        "https://placedog.net/500/300?id=4"
+    ];
+
+    let current = 0;
+
+    function showImage() {
+        document.getElementById("dogImage").src = images[current];
+    }
+
+    function nextImage() {
+        current = (current + 1) % images.length;
+        showImage();
+    }
+
+    function prevImage() {
+        current = (current - 1 + images.length) % images.length;
+        showImage();
+    }
+</script>
+
+</body>
+</html>
